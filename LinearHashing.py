@@ -1,11 +1,9 @@
 import time
-import statistics
 
 Students = ["Malik", "Abdel", "Josh", "Aziz", "Thomas", " Karl", "James", "Eric", "Jason", "David", "Ron", "Bob", "Charlie", "Alice", "Lily", "Mason", "Alex", 
             "Noah", "Olivia", "Emma", "Ella", "Tom", "Max"]
 StudentsHash = []
 HashTable = [[] for _ in range(20)]
-times = []
 
 def linear_search(name):
     found = True
@@ -41,13 +39,11 @@ start = time.perf_counter()
 linear_search(name)
 end = time.perf_counter()
 time_difference = end - start
-times.append(time_difference)
-print(times)
+print(time_difference)
 
 times = []
 start = time.perf_counter()
 hash_search(name)
 end = time.perf_counter()
 time_difference = end - start
-times.append(time_difference)
-print(times)
+print(time_difference)
