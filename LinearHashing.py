@@ -49,16 +49,27 @@ time_difference = end - start
 print(time_difference)
 
 def bubble_sort():
-    key = ""
     flag = True
-    while flag == True:
+    while flag:
         flag = False
         for i in range(len(Students)-1):
             if Students[i] > Students[i+1]:
-                key = Students[i+1]
-                Students[i+1] = Students[i]
-                Students[i] = key
+                Students[i], Students[i+1] = Students[i+1], Students[i]
                 flag = True
 
 bubble_sort()
+print(Students)
+
+def insertion_sort():
+    flag = True
+    while flag:
+        flag = False
+        for i in range(len(Students)-1):
+            for j in range(len(Students)-i):
+                if Students[i] > Students[i+j]:
+                    Students[i], Students[i+j] = Students[i+j], Students[i]
+                    flag = True
+                    break
+
+insertion_sort()
 print(Students)
