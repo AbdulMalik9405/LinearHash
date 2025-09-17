@@ -1,6 +1,6 @@
 import time
 
-Students = ["Malik", "Abdel", "Josh", "Aziz", "Thomas", " Karl", "James", "Eric", "Jason", "David", "Ron", "Bob", "Charlie", "Alice", "Lily", "Mason", "Alex", 
+Students = ["Malik", "Abdel", "Josh", "Aziz", "Thomas", "Karl", "James", "Eric", "Jason", "David", "Ron", "Bob", "Charlie", "Alice", "Lily", "Mason", "Alex", 
             "Noah", "Olivia", "Emma", "Ella", "Tom", "Max"]
 StudentsHash = []
 HashTable = [[] for _ in range(20)]
@@ -47,3 +47,24 @@ hash_search(name)
 end = time.perf_counter()
 time_difference = end - start
 print(time_difference)
+
+def bubble_sort():
+    key = ""
+    flag = False
+    while flag == False:
+        Swap = 0
+        for i in range(len(Students)-1):
+            if Students[i] == Students[i+1]:
+                continue
+            elif Students[i] > Students[i+1]:
+                key = Students[i+1]
+                Students[i+1] = Students[i]
+                Students[i] = key
+                Swap = Swap + 1
+            else:
+                flag = False
+        if Swap == 0:
+            flag = True
+
+bubble_sort()
+print(Students)
