@@ -50,21 +50,15 @@ print(time_difference)
 
 def bubble_sort():
     key = ""
-    flag = False
-    while flag == False:
-        Swap = 0
+    flag = True
+    while flag == True:
+        flag = False
         for i in range(len(Students)-1):
-            if Students[i] == Students[i+1]:
-                continue
-            elif Students[i] > Students[i+1]:
+            if Students[i] > Students[i+1]:
                 key = Students[i+1]
                 Students[i+1] = Students[i]
                 Students[i] = key
-                Swap = Swap + 1
-            else:
-                flag = False
-        if Swap == 0:
-            flag = True
+                flag = True
 
 bubble_sort()
 print(Students)
